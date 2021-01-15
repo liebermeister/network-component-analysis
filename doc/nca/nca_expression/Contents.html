@@ -1,0 +1,91 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+                "http://www.w3.org/TR/REC-html40/loose.dtd">
+<html>
+<head>
+  <title>Description of Contents</title>
+  <meta name="keywords" content="Contents">
+  <meta name="description" content="Scripts to preprocess expression data for NCA">
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+  <meta name="generator" content="m2html v1.5 &copy; 2003-2005 Guillaume Flandin">
+  <meta name="robots" content="index, follow">
+  <link type="text/css" rel="stylesheet" href="../../m2html.css">
+</head>
+<body>
+<a name="_top"></a>
+<div><a href="../../index.html">Home</a> &gt;  <a href="#">nca</a> &gt; <a href="index.html">nca_expression</a> &gt; Contents.m</div>
+
+<!--<table width="100%"><tr><td align="left"><a href="../../index.html"><img alt="<" border="0" src="../../left.png">&nbsp;Master index</a></td>
+<td align="right"><a href="index.html">Index for nca/nca_expression&nbsp;<img alt=">" border="0" src="../../right.png"></a></td></tr></table>-->
+
+<h1>Contents
+</h1>
+
+<h2><a name="_name"></a>PURPOSE <a href="#_top"><img alt="^" border="0" src="../../up.png"></a></h2>
+<div class="box"><strong>Scripts to preprocess expression data for NCA</strong></div>
+
+<h2><a name="_synopsis"></a>SYNOPSIS <a href="#_top"><img alt="^" border="0" src="../../up.png"></a></h2>
+<div class="box"><strong>This is a script file. </strong></div>
+
+<h2><a name="_description"></a>DESCRIPTION <a href="#_top"><img alt="^" border="0" src="../../up.png"></a></h2>
+<div class="fragment"><pre class="comment"> Scripts to preprocess expression data for NCA
+
+ How to turn matrices called 'od' and 'gfp' into a data structure 'D'
+ This structure contains, among other things, smooth curves for 
+ GFP/OD and (dGFP/dt)/OD
+
+1. put data into a structure D
+  o each matrix row of gfp and od must correspond to one gene
+  o matrices are supposed to be already preprocessed by alon's matlab script
+  o gene_names is a (column) list of strings
+
+ D.GFP        = gfp;
+ D.OD         = od;
+ D.gene_names = gene_names;
+
+2. run the whole preprocessing -&gt; updated structure D
+
+ [D,info] = preprocess_gfp_data(D,'graphics_flag',0,'remove_genes_flag',1,'use_time_points',21:size(D.OD,2));
+
+3. If necessary, average over multiple occurrences of genes 
+ D = gfp_data_unify_genes(D);
+   (this can also be done automatically within 'preprocess_gfp_data')
+
+ For more information, type 'help process_gfp_data'
+II. Expression Data Functions
+
+Experimental data and transcriptional regulation networks are
+represented by matlab structures.
+
+Mandatory fields for experimental data structure D
+ operon_names  list of (m) operon names
+ GFPder_p_OD   m x k matrix containing (d GFP/dt)/OD values for k time points 
+
+Mandatory fields for transcriptional networks structure W
+ operon_names  list of (m) operon names
+ TF_names      list of (n) transcription factor names
+ data          m x n matrix containing 1 if regulation is known, 0 otherwise
+ signs         similar, with 1: positive control. 2: negative control. 3: dual control
+
+Manipulate Data Matrices
+
+  clean_gfp_data                 estimate gfp'/od etc
+  check_control_genes            plot timecourses of repeats
+  combine_D_and_W                make a data structure and a network structure comparable
+  combine_experiments            combine two data structures</pre></div>
+
+<!-- crossreference -->
+<h2><a name="_cross"></a>CROSS-REFERENCE INFORMATION <a href="#_top"><img alt="^" border="0" src="../../up.png"></a></h2>
+This function calls:
+<ul style="list-style-image:url(../../matlabicon.gif)">
+</ul>
+This function is called by:
+<ul style="list-style-image:url(../../matlabicon.gif)">
+</ul>
+<!-- crossreference -->
+
+
+
+
+<hr><address>Generated on Fri 15-Jan-2021 15:22:45 by <strong><a href="http://www.artefact.tk/software/matlab/m2html/" title="Matlab Documentation in HTML">m2html</a></strong> &copy; 2005</address>
+</body>
+</html>

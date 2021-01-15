@@ -1,0 +1,71 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+                "http://www.w3.org/TR/REC-html40/loose.dtd">
+<html>
+<head>
+  <title>Description of minq</title>
+  <meta name="keywords" content="minq">
+  <meta name="description" content="%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%">
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+  <meta name="generator" content="m2html v1.5 &copy; 2003-2005 Guillaume Flandin">
+  <meta name="robots" content="index, follow">
+  <link type="text/css" rel="stylesheet" href="../m2html.css">
+</head>
+<body>
+<a name="_top"></a>
+<div><a href="../index.html">Home</a> &gt;  <a href="index.html">minq</a> &gt; minq.m</div>
+
+<!--<table width="100%"><tr><td align="left"><a href="../index.html"><img alt="<" border="0" src="../left.png">&nbsp;Master index</a></td>
+<td align="right"><a href="index.html">Index for minq&nbsp;<img alt=">" border="0" src="../right.png"></a></td></tr></table>-->
+
+<h1>minq
+</h1>
+
+<h2><a name="_name"></a>PURPOSE <a href="#_top"><img alt="^" border="0" src="../up.png"></a></h2>
+<div class="box"><strong>%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%</strong></div>
+
+<h2><a name="_synopsis"></a>SYNOPSIS <a href="#_top"><img alt="^" border="0" src="../up.png"></a></h2>
+<div class="box"><strong>function [x,fct,ier,nsub]=minq(gam,c,G,xu,xo,prt,xx); </strong></div>
+
+<h2><a name="_description"></a>DESCRIPTION <a href="#_top"><img alt="^" border="0" src="../up.png"></a></h2>
+<div class="fragment"><pre class="comment">%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% minq.m %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ function [x,fct,ier,nsub]=minq(gam,c,G,xu,xo,prt,xx);
+ minimizes an affine quadratic form subject to simple bounds,
+ using coordinate searches and reduced subspace minimizations
+ using LDL^T factorization updates
+    min    fct = gam + c^T x + 0.5 x^T G x 
+    s.t.   x in [xu,xo]    % xu&lt;=xo is assumed
+ where G is a symmetric n x n matrix, not necessarily definite
+ (if G is indefinite, only a local minimum is found)
+
+ if G is sparse, it is assumed that the ordering is such that
+ a sparse modified Cholesky factorization is feasible
+
+ prt    printlevel
+ xx    initial guess (optional)
+
+ x    minimizer (but unbounded direction if ier=1)
+ fct    optimal function value
+ ier    0  (local minimizer found)
+     1  (unbounded below)
+     99 (maxit exceeded)
+
+ calls getalp.m, ldl*.m, minqsub.m, pr01.m</pre></div>
+
+<!-- crossreference -->
+<h2><a name="_cross"></a>CROSS-REFERENCE INFORMATION <a href="#_top"><img alt="^" border="0" src="../up.png"></a></h2>
+This function calls:
+<ul style="list-style-image:url(../matlabicon.gif)">
+<li><a href="getalp.html" class="code" title="function [alp,lba,uba,ier]=getalp(alpu,alpo,gTp,pTGp);">getalp</a>	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%</li><li><a href="minqsub.html" class="code" title="">minqsub</a>	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%</li><li><a href="pr01.html" class="code" title="function summe=pr01(name,x)">pr01</a>	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%</li></ul>
+This function is called by:
+<ul style="list-style-image:url(../matlabicon.gif)">
+<li><a href="minqdef.html" class="code" title="function [x,y,ier]=minqdef(c,G,A,b,eq,prt,xx);">minqdef</a>	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%</li><li><a href="minqsep.html" class="code" title="function [x,y,ier]=minqsep(c,d,A,b,eq,prt,xx);">minqsep</a>	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%</li><li><a href="rls.html" class="code" title="function [x,act]=rls(A,b,x0,r);">rls</a>	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%</li><li><a href="../nca/utils/my_lsqlin.html" class="code" title="function a = my_lsqlin(B,x,s,a_guess)">my_lsqlin</a>	don't forget to addpath ~/matlab_packages/minq</li></ul>
+<!-- crossreference -->
+
+
+
+
+<hr><address>Generated on Fri 15-Jan-2021 15:22:45 by <strong><a href="http://www.artefact.tk/software/matlab/m2html/" title="Matlab Documentation in HTML">m2html</a></strong> &copy; 2005</address>
+</body>
+</html>

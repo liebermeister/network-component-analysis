@@ -1,0 +1,74 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+                "http://www.w3.org/TR/REC-html40/loose.dtd">
+<html>
+<head>
+  <title>Description of minqsep</title>
+  <meta name="keywords" content="minqsep">
+  <meta name="description" content="%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%">
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+  <meta name="generator" content="m2html v1.5 &copy; 2003-2005 Guillaume Flandin">
+  <meta name="robots" content="index, follow">
+  <link type="text/css" rel="stylesheet" href="../m2html.css">
+</head>
+<body>
+<a name="_top"></a>
+<div><a href="../index.html">Home</a> &gt;  <a href="index.html">minq</a> &gt; minqsep.m</div>
+
+<!--<table width="100%"><tr><td align="left"><a href="../index.html"><img alt="<" border="0" src="../left.png">&nbsp;Master index</a></td>
+<td align="right"><a href="index.html">Index for minq&nbsp;<img alt=">" border="0" src="../right.png"></a></td></tr></table>-->
+
+<h1>minqsep
+</h1>
+
+<h2><a name="_name"></a>PURPOSE <a href="#_top"><img alt="^" border="0" src="../up.png"></a></h2>
+<div class="box"><strong>%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%</strong></div>
+
+<h2><a name="_synopsis"></a>SYNOPSIS <a href="#_top"><img alt="^" border="0" src="../up.png"></a></h2>
+<div class="box"><strong>function [x,y,ier]=minqsep(c,d,A,b,eq,prt,xx); </strong></div>
+
+<h2><a name="_description"></a>DESCRIPTION <a href="#_top"><img alt="^" border="0" src="../up.png"></a></h2>
+<div class="fragment"><pre class="comment">%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% minqsep.m %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ function [x,y,ier]=minqsep(c,d,A,b,eq,prt,xx);
+ minimizes a definite separable quadratic form
+ subject to linear constraints
+    min    fct = c^T x + 0.5 x^T G x 
+    s.t.   A x &gt;= b, with equality at indices with eq=1
+ where D=diag(d) is a definite n x n diagonal matrix
+
+ if A is sparse, it is assumed that the ordering is such that
+ a sparse Cholesky factorization of AA^T is feasible
+
+ eq    characteristic vector of equalities
+ prt    printlevel
+ xx    guess (optional)
+
+ x    minimizer (but unbounded direction if ier=1)
+ y     Lagrange multiplier satisfying the KKT conditions
+       Dx=A^Ty-c, inf(y,Ax-b)=0 at indices with eq=0
+ ier    0  (global minimizer found)
+     1  (approximate solution; feasible set probably empty)
+     99 (approximate solution; maxit exceeded)
+
+ Method: apply minq.m to the dual
+    min  0.5*(A^Ty-c)^TD^(-1)(A^Ty-c)-b^Ty 
+    s.t. y(~eq)&gt;=0
+ x is recovered as x=D^(-1)(A^Ty-c)</pre></div>
+
+<!-- crossreference -->
+<h2><a name="_cross"></a>CROSS-REFERENCE INFORMATION <a href="#_top"><img alt="^" border="0" src="../up.png"></a></h2>
+This function calls:
+<ul style="list-style-image:url(../matlabicon.gif)">
+<li><a href="minq.html" class="code" title="function [x,fct,ier,nsub]=minq(gam,c,G,xu,xo,prt,xx);">minq</a>	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%</li></ul>
+This function is called by:
+<ul style="list-style-image:url(../matlabicon.gif)">
+<li><a href="minq_test.html" class="code" title="">minq_test</a>	test minq.m, minqdef.m, minqsep.m</li></ul>
+<!-- crossreference -->
+
+
+
+
+<hr><address>Generated on Fri 15-Jan-2021 15:22:45 by <strong><a href="http://www.artefact.tk/software/matlab/m2html/" title="Matlab Documentation in HTML">m2html</a></strong> &copy; 2005</address>
+</body>
+</html>

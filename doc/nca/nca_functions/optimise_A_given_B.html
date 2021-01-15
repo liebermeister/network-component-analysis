@@ -1,0 +1,51 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+                "http://www.w3.org/TR/REC-html40/loose.dtd">
+<html>
+<head>
+  <title>Description of optimise_A_given_B</title>
+  <meta name="keywords" content="optimise_A_given_B">
+  <meta name="description" content="A_new = optimise_A_given_B(X,Wdata,B,signs,lambda_A,A,general,lambda_dep,regularise_flag)">
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+  <meta name="generator" content="m2html v1.5 &copy; 2003-2005 Guillaume Flandin">
+  <meta name="robots" content="index, follow">
+  <link type="text/css" rel="stylesheet" href="../../m2html.css">
+</head>
+<body>
+<a name="_top"></a>
+<div><a href="../../index.html">Home</a> &gt;  <a href="#">nca</a> &gt; <a href="index.html">nca_functions</a> &gt; optimise_A_given_B.m</div>
+
+<!--<table width="100%"><tr><td align="left"><a href="../../index.html"><img alt="<" border="0" src="../../left.png">&nbsp;Master index</a></td>
+<td align="right"><a href="index.html">Index for nca/nca_functions&nbsp;<img alt=">" border="0" src="../../right.png"></a></td></tr></table>-->
+
+<h1>optimise_A_given_B
+</h1>
+
+<h2><a name="_name"></a>PURPOSE <a href="#_top"><img alt="^" border="0" src="../../up.png"></a></h2>
+<div class="box"><strong>A_new = optimise_A_given_B(X,Wdata,B,signs,lambda_A,A,general,lambda_dep,regularise_flag)</strong></div>
+
+<h2><a name="_synopsis"></a>SYNOPSIS <a href="#_top"><img alt="^" border="0" src="../../up.png"></a></h2>
+<div class="box"><strong>function A_new = optimise_A_given_B(X,Wdata,B,signs,lambda_A,A,general,lambda_dep,regularise_flag,lambda_B) </strong></div>
+
+<h2><a name="_description"></a>DESCRIPTION <a href="#_top"><img alt="^" border="0" src="../../up.png"></a></h2>
+<div class="fragment"><pre class="comment"> A_new = optimise_A_given_B(X,Wdata,B,signs,lambda_A,A,general,lambda_dep,regularise_flag)
+
+if ~exist('signs','var'),      signs       = []; end 
+if ~exist('general','var'),    general     = []; end 
+if ~exist('lambda_dep','var'), lambda_dep  = 1;  end</pre></div>
+
+<!-- crossreference -->
+<h2><a name="_cross"></a>CROSS-REFERENCE INFORMATION <a href="#_top"><img alt="^" border="0" src="../../up.png"></a></h2>
+This function calls:
+<ul style="list-style-image:url(../../matlabicon.gif)">
+<li><a href="../../nca/utils/my_lsqlin.html" class="code" title="function a = my_lsqlin(B,x,s,a_guess)">my_lsqlin</a>	don't forget to addpath ~/matlab_packages/minq</li></ul>
+This function is called by:
+<ul style="list-style-image:url(../../matlabicon.gif)">
+<li><a href="modify_connections.html" class="code" title="function W_new = modify_connections(X,W,A,B,P,known_signs,sigma_0,p_sign_error,n_threshold_possible,verbose,general,lambda_dep,regularise_flag)">modify_connections</a>	W_new = choose_new_W(X,W,B,P,known_signs,sigma_0,p_sign_error,n_threshold_possible,verbose)</li><li><a href="modify_network.html" class="code" title="function [A_opt,B_opt,W_opt,X_opt,X_error_opt,changes] = modify_network(A,B,W,X,X_error,method,parameters,general,lambda_dep,regularise_flag);">modify_network</a>	</li><li><a href="modify_shifts.html" class="code" title="function [X_shifted,shifts,A_new,X_error_shifted] = modify_shifts(W,X,A,B,sigma_prior,sigma_loglike,X_error,experiments)">modify_shifts</a>	[X_shifted,shifts] = modify_shifts(W,X,B,sigma_prior,sigma_loglike)</li><li><a href="modify_signs.html" class="code" title="function [W_new,A_new,changes,X_pred] = modify_signs(X,W,A,B,W_signs,X_error,p_sign_error,fixed_TF,verbose,general,lambda_dep,regularise_flag)">modify_signs</a>	[W_new,A,B,changes,X_pred] = relax_signs(X,W,B,W_signs,p_sign_error,verbose)</li><li><a href="nca_loop.html" class="code" title="function [A_list,B_list] = nca_loop(X,W_data,W_signs,graphics_flag,verbose,force_B1,initial_choice,n_itmax,lambda,lambda_A,lambda_B,A_first,B_first,repeat,epsilon,no_nans,nan_blocks,TF_names,general,lambda_dep,regularise_flag,no_nan_predictions,n_processes,random_seed,repeat_noise_std)">nca_loop</a>	[A_list,B_list] = nca_loop(...</li><li><a href="nca_make_info.html" class="code" title="function info = nca_make_info(A_list,B_list,Wdata,Wsigns,X,lambda_A,force_B1,general,lambda_dep,regularise_flag)">nca_make_info</a>	</li><li><a href="optimise_W.html" class="code" title="function [W_new,A_new,X_pred,B,new,removed] = optimise_W(X,W_start,A,B,P,known_signs,sigma_0,p_sign_error,n_threshold_possible,n_iterations,graphics_flag,verbose,general,lambda_dep,regularise_flag);">optimise_W</a>	[W_new,A_new,X_pred,B,new,removed] = optimise_W(X,W_start,A,B,P,known_signs,sigma_0,p_sign_error,n_threshold_possible,n_iterations,graphics_flag,verbose);</li><li><a href="../../nca/nca_graphics/display_input_weights.html" class="code" title="function display_input_weights(info,W,X,filename,TF_choice,operon_choice,general,lambda_dep,regularise_flag)">display_input_weights</a>	-----------------------------------------------------------</li></ul>
+<!-- crossreference -->
+
+
+
+
+<hr><address>Generated on Fri 15-Jan-2021 15:22:45 by <strong><a href="http://www.artefact.tk/software/matlab/m2html/" title="Matlab Documentation in HTML">m2html</a></strong> &copy; 2005</address>
+</body>
+</html>

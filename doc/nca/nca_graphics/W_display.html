@@ -1,0 +1,70 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+                "http://www.w3.org/TR/REC-html40/loose.dtd">
+<html>
+<head>
+  <title>Description of W_display</title>
+  <meta name="keywords" content="W_display">
+  <meta name="description" content="[pos_TF,pos_operon] = W_display(W,method,options)">
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+  <meta name="generator" content="m2html v1.5 &copy; 2003-2005 Guillaume Flandin">
+  <meta name="robots" content="index, follow">
+  <link type="text/css" rel="stylesheet" href="../../m2html.css">
+</head>
+<body>
+<a name="_top"></a>
+<div><a href="../../index.html">Home</a> &gt;  <a href="#">nca</a> &gt; <a href="index.html">nca_graphics</a> &gt; W_display.m</div>
+
+<!--<table width="100%"><tr><td align="left"><a href="../../index.html"><img alt="<" border="0" src="../../left.png">&nbsp;Master index</a></td>
+<td align="right"><a href="index.html">Index for nca/nca_graphics&nbsp;<img alt=">" border="0" src="../../right.png"></a></td></tr></table>-->
+
+<h1>W_display
+</h1>
+
+<h2><a name="_name"></a>PURPOSE <a href="#_top"><img alt="^" border="0" src="../../up.png"></a></h2>
+<div class="box"><strong>[pos_TF,pos_operon] = W_display(W,method,options)</strong></div>
+
+<h2><a name="_synopsis"></a>SYNOPSIS <a href="#_top"><img alt="^" border="0" src="../../up.png"></a></h2>
+<div class="box"><strong>function [pos_TF,pos_operon] = W_display(W,method,options) </strong></div>
+
+<h2><a name="_description"></a>DESCRIPTION <a href="#_top"><img alt="^" border="0" src="../../up.png"></a></h2>
+<div class="fragment"><pre class="comment"> [pos_TF,pos_operon] = W_display(W,method,options)
+
+ Display a transcriptional network
+
+ if method = 'N' -&gt; matrix representation (including signs)
+ if method = 'M' -&gt; matrix representation (no signs)
+ if method = 'R' -&gt; matrix representation (no signs) without names
+ otherwise: network representation
+
+ fields of 'options' contain the graphics parameters
+
+ 'arrow_numbers',0
+ 'textsize',11
+ 'blocks',1
+ 'xTF',0  %  arrows x value left
+ 'xOP',1  %  arrows x value right ; % the y values range from 1 to # operons
+ 'net_width', 1 overrides xOP: xOP is set to xTF + net_width
+ 'lw',1
+ 'arrow_values',[]
+ 'names','genes'
+ 'textyoffset',0
+ 'textTFxoffset',0
+ 'textOPxoffset',0;
+ 'position' [0.1 0.1 0.85 0.8]</pre></div>
+
+<!-- crossreference -->
+<h2><a name="_cross"></a>CROSS-REFERENCE INFORMATION <a href="#_top"><img alt="^" border="0" src="../../up.png"></a></h2>
+This function calls:
+<ul style="list-style-image:url(../../matlabicon.gif)">
+<li><a href="../../nca/nca_networks/nca_network_support.html" class="code" title="function M_support = nca_network_support(W,W_support)">nca_network_support</a>	determine those connections in network W that are in addition supported by network W_support</li><li><a href="../../nca/utils/default.html" class="code" title="function commandstring = default(varargin)">default</a>	commandstring = default(varname1,defaultvalue1,varname2,defaultvalue2,...)</li><li><a href="../../nca/utils/find_separate_subgraphs.html" class="code" title="function [subgraphs,node_order] = find_separate_subgraphs(g)">find_separate_subgraphs</a>	</li><li><a href="../../nca/utils/im.html" class="code" title="function im(X,m,rownames,colnames)">im</a>	im(X,m,rownames,colnames)</li><li><a href="../../nca/utils/my_colors.html" class="code" title="function jj=my_colors(n,white)">my_colors</a>	aus read_colors.pl</li><li><a href="../../nca/utils/my_xticklabel.html" class="code" title="function my_xticklabel(x,y,s,siz,col)">my_xticklabel</a>	</li><li><a href="../../nca/utils/rb_colors.html" class="code" title="function c = rb_colors(ncol)">rb_colors</a>	</li></ul>
+This function is called by:
+<ul style="list-style-image:url(../../matlabicon.gif)">
+<li><a href="W_display_operons.html" class="code" title="function W_display_operons(W,operons,augment)">W_display_operons</a>	W_display_operons(W,operons)</li><li><a href="display_curves_and_connectivity.html" class="code" title="function options = display_curves_and_connectivity(W,X,TF_act,X_additional,options,arrow_values);">display_curves_and_connectivity</a>	display_curves_and_connectivity(W,X,TF_act,X_additional,options,arrow_values);</li><li><a href="result_curves.html" class="code" title="function result_curves(Wsub_block,operons_sub,TF_sub,X,A,TF_act,Xpred_sub);">result_curves</a>	result_curves(Wsub_block,operons_sub,TF_sub,X,A,TF_act,Xpred_sub);</li></ul>
+<!-- crossreference -->
+
+
+
+
+<hr><address>Generated on Fri 15-Jan-2021 15:22:45 by <strong><a href="http://www.artefact.tk/software/matlab/m2html/" title="Matlab Documentation in HTML">m2html</a></strong> &copy; 2005</address>
+</body>
+</html>
