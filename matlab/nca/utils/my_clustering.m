@@ -10,4 +10,4 @@ if ~exist('distance_measure','var'), distance_measure = 'euclidean'; end
 
 % cluster the rows of a matrix 
 l=linkage(pdist(X,distance_measure),'ward');
-[h,t,order]=dendrogram(l,0,'orientation','left');
+figure(1999); [h,t,order]=dendrogram(l,0,'orientation','left');
