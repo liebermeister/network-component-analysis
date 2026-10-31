@@ -1,6 +1,8 @@
 -----------------------------------------------------
 Matlab toolbox for Network Component Analysis  
 W. Liebermeister (2010)
+
+Developed for article Büscher et al (2010)
 -----------------------------------------------------
 
 
@@ -11,6 +13,12 @@ Installation
  2. After starting matlab, execute the startup script 'startup_nca.m'
 
 For further information, see the help text of the main function 'nca.m'.
+
+
+-----------------------------------------------------
+Required packages
+
+Matlab utility functions  https://github.com/liebermeister/matlab-utils
 
 
 -----------------------------------------------------

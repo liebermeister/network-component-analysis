@@ -11,6 +11,7 @@ if ~exist('split'), split=0; end
 if exist('nlines'), names=cell(1,nlines); end
 
 k=0; % line number
+names = {};
 
 while(~feof(file))
   k = k+1;

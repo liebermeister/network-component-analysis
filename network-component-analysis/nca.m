@@ -63,6 +63,12 @@ function [A,B,X_pred,info,A_list,B_list] = nca(...
 % TF_names         {}       list of transcription factor names (for graphics only)
 
 
+if exist('dependencies_check_once','file')
+  dependencies_check_once('nca_dependencies');
+else
+  nca_dependencies();
+end
+
 % ----------------------
 % default parameter values
 
