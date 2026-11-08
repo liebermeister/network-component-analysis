@@ -44,6 +44,12 @@
 %  W_add_general                        add a general TF
 %  randomise_edges                      create a random network with same degrees
 %
+%Read and write networks (SBtab files with Gene, Regulator and Regulation tables;
+%requires the SBtab toolbox https://github.com/liebermeister/sbtab-matlab)
+%
+%  [W, A] = nca_network_sbtab_load(filename)     read genes, TFs, arrows, signs (and weights A)
+%  nca_network_sbtab_save(W, filename, [], A)    write them
+%
 %Display network
 %
 %  W_display(Wsub);                     display network connectivities by lines

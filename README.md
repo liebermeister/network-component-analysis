@@ -19,6 +19,8 @@ For further information, see the help text of the main function 'nca.m'.
 Required packages
 
 Matlab utility functions  https://github.com/liebermeister/matlab-utils
+SBtab toolbox (optional; for reading and writing networks in SBtab files)
+                          https://github.com/liebermeister/sbtab-matlab
 
 
 -----------------------------------------------------
